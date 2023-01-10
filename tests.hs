@@ -1,3 +1,5 @@
+import SudokuLib
+
 inp1 = [[5, 3, 0, 0, 7, 0, 0, 0, 0],
         [6, 0, 0, 1, 9, 5, 0, 0, 0],
         [0, 9, 8, 0, 0, 0, 0, 6, 0],
@@ -21,3 +23,6 @@ ans1 = [[5, 3, 4, 6, 7, 8, 9, 1, 2],
 
 theSame :: [[Int]] -> [[Int]] -> Bool
 theSame xs ys = if xs == ys then True else False
+
+test1 :: [[Int]] -> [[Int]] -> Bool
+test1 = theSame (solve inp1) ans1

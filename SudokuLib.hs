@@ -43,3 +43,12 @@ validRows xss = boolMap isDistinct xss
 validColumns :: Eq a => [[a]] -> Maybe Bool
 validColumns xss = boolMap isDistinct (transpose xss)
 
+-- fucking no idea with this atm
+splitBy3 :: [a] -> [[a]]
+splitBy3 [] = []
+splitBy3 (x:y:z:xs) = [[x,y,z]] ++ splitBy3 xs
+
+foo [] = []
+foo (x:y:z:xs) = [x | x <- splitBy3 merge] ++ foo xs
+                where merge = x ++ y ++ z
+
